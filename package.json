@@ -1,0 +1,70 @@
+{
+  "name": "electron-ts-vue3",
+  "version": "1.0.0",
+  "description": "基于electron、vue3搭建的pc桌面应用",
+  "main": "dist-electron/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build:vue":"vite build",
+    "build": "set NODE_OPTIONS=%NODE_OPTIONS%;--max-old-space-size=8192 rimraf dist && vite build && electron-builder",
+    "serve": "vite preview"
+  },
+  "build": {
+    "appId": "com.vite_vue_software.desktop",
+    "productName": "vite_vue_software",
+    "asar": true,
+    "copyright": "vite_vue_software",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "dist",
+      "dist-electron/index.js"
+    ],
+    "extraFiles":["dist"],
+    "extraResources":["dist"],
+    "mac": {
+      "artifactName": "${productName}_${version}.${ext}",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:8080"
+      }
+    ],
+    "releaseInfo": {
+      "releaseNotes": "版本更新的具体内容"
+    }
+  },
+  "dependencies": {
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "electron": "^21.2.2",
+    "electron-  ": "^23.6.0",
+    "rimraf": "^3.0.2",
+    "vite": "^2.6.4",
+    "vite-plugin-electron": "^0.10.2"
+  }
+}
