@@ -5,7 +5,7 @@
   "main": "dist-electron/index.js",
   "scripts": {
     "dev": "vite",
-    "build:vue":"vite build",
+    "build:vue": "vite build",
     "build": "set NODE_OPTIONS=%NODE_OPTIONS%;--max-old-space-size=8192 rimraf dist && vite build && electron-builder",
     "serve": "vite preview"
   },
@@ -21,8 +21,12 @@
       "dist",
       "dist-electron/index.js"
     ],
-    "extraFiles":["dist"],
-    "extraResources":["dist"],
+    "extraFiles": [
+      "dist"
+    ],
+    "extraResources": [
+      "dist"
+    ],
     "mac": {
       "artifactName": "${productName}_${version}.${ext}",
       "target": [
@@ -61,8 +65,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
+    "@vueuse/electron": "^9.5.0",
     "electron": "^21.2.2",
-    "electron-  ": "^23.6.0",
     "rimraf": "^3.0.2",
     "vite": "^2.6.4",
     "vite-plugin-electron": "^0.10.2"
