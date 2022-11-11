@@ -1,6 +1,6 @@
 {
   "name": "electron-ts-vue3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于electron、vue3搭建的pc桌面应用",
   "main": "dist-electron/index.js",
   "scripts": {

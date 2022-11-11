@@ -6,7 +6,7 @@ export default defineConfig({
     vue(),
     electron(
       {
-        entry: "electron-main/index.ts", // 主进程文件
+        entry: "electron/electron-main/index.ts", // 主进程文件
       },
     ),
   ],
